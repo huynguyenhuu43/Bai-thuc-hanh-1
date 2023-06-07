@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trang web đa phương tiện</title>
+  <style>
+    .vd {
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+     
+    }
+
+    .video-wrapper {
+        width: 50%;
+      height: 50%;
+      
+    }
+    .video-wrapper video,
+    .video-wrapper iframe {
+      width: 50%;
+      height: 50%;
+    }
+    .first{
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+    <div class="first">
+  <h1 >Trang web đa phương tiện</h1>
+  <h2 >Nghe nhạc</h2>
+  <audio controls>
+    <source src="audio/Thang-4-La-Loi-Noi-Doi-Cua-Em-Live-Version-Ha-Anh-Tuan.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+  <div class="vd">
+    <!-- Phần xem video -->
+    <div class="video-wrapper">
+      <h2 >Xem video</h2>
+      <video controls>
+        <source src="video/video1.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    </div>
+
+    <!-- Phần nhúng video từ YouTube -->
+    <div class="video-wrapper">
+      <h2>Nhúng video từ YouTube</h2>
+      <iframe width="560" height="315"  src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+</html>
