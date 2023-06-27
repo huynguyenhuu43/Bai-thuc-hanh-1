@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 10</title>
+</head>
+<body>
+    <h1 align="center">BÀI KIỂM TRA CHƯƠNG 2</h1> <br 2>
+    <div align="center">
+        <P><b>Môn học :</b><i>Ứng dụng web</i></P>
+        <P><b>Mã số sinh viên :</b><i>2051010108</i></P>
+        <P><b>Họ và tên :</b><i>Nguyễn Hữu Huy</i></P>
+    </div>
+      <br>
+      <hr size="5px" color="blue"><br>
+      <div id="menu" align="center">
+      <a href="trangchu">Trang chủ</a>
+      <a href="trangchu">Nội dung</a>
+      <a href="trangchu">Môn học</a>
+      <a href="trangchu">Đăng kí</a>
+    </div><br>
+    <h1 align="center">ĐĂNG KÍ THAM GIA DIỄN ĐÀN</h1><BR>   
+        <table  border="1" align="center" bgcolor="yellow">
+            <form>
+            <tr>
+                <td>Tên đăng nhập</td>
+                <td><input type="text" name="txtHoTen" placeholder="Nhập tên đăng nhập" style="width: 70%;" value=""></td>
+            </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td><input type="password" name="txtMatKhau"style="width: 70%;"value=""></td>
+            </tr>
+            <tr>
+                <td>Giới Tính</td>
+                <td><input type="checkbox" name="GioiTinh" value="Nam"/>Nam
+                    <input type="checkbox" name="GioiTinh" value="Nu"/>Nữ</td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td>
+                <td><input type="date" name="ngaysinh" id="ngaysinh" placeholder="dd/mm/yyyy"style="width: 60%;" value=""></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="txtMail"  style="width: 70%;" value=""></td>
+            </tr>
+            <tr>
+                <td>Ngôn ngữ lập trình yêu thích</td>
+                <td>
+                    <select name="selLangues" style="width: 70%;" value="">
+                        <option value="" disabled selected hidden></option>
+                    <option value="red" > C++ </option >
+                    <option value="green">C# </option>
+                    <option value="php"> PHP</option>
+                    <option value="python"> Python</option>
+                    <option value="java"> Javascript</option>
+                    </select >
+                    
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="3">Quy định khi tham gia diễn đàn</td>
+                <td rowspan="3"><textarea name="quyDinh" id="quyDinh" cols="45" rows="5" value=""></textarea></td>
+            </tr>
+            <tfoot>
+                <td></td>
+                <td>
+                    
+                        <button type="button" onclick="validateForm()">
+                            <img src="submit.jpg" alt="submit" width="70px" height="40px"/>
+                        </button>
+                        
+                        <button name="resetForm" type="reset" >
+                            <img src="reset.png" alt="reset" width="70px" height="40px"/>
+                        </button>
+                    
+                </td>
+            </tfoot>
+        </form>
+        </table>
+    
+        <script>
+            function validateForm() {
+                var username = document.getElementsByName("txtHoTen")[0].value;
+                var password = document.getElementsByName("txtMatKhau")[0].value;
+                var email = document.getElementsByName("txtMail")[0].value;
+                var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+                if (username === "" || password === "" || email === "") {
+                    alert("Vui lòng điền đầy đủ thông tin đăng ký.");
+                } 
+                if (!emailPattern.test(email)) {
+                    alert("Vui lòng nhập địa chỉ email hợp lệ!");
+                    return false;
+                }
+                else {
+                    alert("Đăng ký thành công!");
+                }
+
+                
+            }
+            
+        </script>
+        
+        </table>
+
+</body>
+</html>
