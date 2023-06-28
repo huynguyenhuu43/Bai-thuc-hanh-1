@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouncing Ball</title>
+  <style>
+    #container {
+      width: 400px;
+      height: 300px;
+      position: relative;
+      border: 1px solid black;
+      overflow: hidden;
+      background-color: gray;
+    }
+
+    #ball {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <img id="ball" src="Images/ball.jpg" alt="Bouncing Ball">
+  </div>
+
+  <script>
+    var container = document.getElementById('container');
+    var ball = document.getElementById('ball');
+    var x = 0; // Tọa độ x
+    var y = 0; // Tọa độ y
+    var dx = 4; // Số pixel di chuyển theo trục x
+    var dy = 4; // Số pixel di chuyển theo trục y
+
+    function draw() {
+      // Cập nhật vị trí của quả bóng
+      x += dx;
+      y += dy;
+
+      // Kiểm tra các biên của khung chứa
+      if (x <= 0 || x >= container.offsetWidth - ball.offsetWidth) {
+        dx = -dx; // Đổi chiều chuyển động khi chạm biên trái hoặc biên phải
+      }
+      if (y <= 0 || y >= container.offsetHeight - ball.offsetHeight) {
+        dy = -dy; // Đổi chiều chuyển động khi chạm biên trên hoặc biên dưới
+      }
+
+      // Cập nhật vị trí mới cho quả bóng
+      ball.style.left = x + 'px';
+      ball.style.top = y + 'px';
+    }
+
+    // Sử dụng hàm setInterval để thực hiện hàm draw liên tục sau mỗi khoảng thời gian
+    setInterval(draw, 80);
+  </script>
+</body>
+</html>

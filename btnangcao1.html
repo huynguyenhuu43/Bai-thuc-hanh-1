@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài tập nâng cao 1</title>
+</head>
+<body>
+<link rel="stylesheet" href="CSS/stylebtnc1.css">
+
+    <h1>Tìm kiếm và thay thế</h1>
+    <hr noshade="50">
+    <table>
+        <tr>
+            <td>Nhập chuỗi cần tìm : </td>
+            <td><input type="text" name="txtChuoi" placeholder="Nhập chuỗi cần tìm" ></td>
+            <td><input type="checkbox" name="phanBiet"  />Có phân biệt chữ hoa và thường ?</td>
+        </tr>
+        <tr>
+            <td>Nhập chuỗi thay thế : </td>
+            <td><input type="text" name="txtThayThe" placeholder="Nhập chuỗi thay thế"></td>
+        </tr>
+    </table>
+    
+        <input type="button"  value="Tìm và thay thế">
+        <input type="button" value="Khôi phục">
+    <br >
+
+    <div class="khung">
+      
+        <h1>CHƯƠNG 1: HTML </h1>
+        
+        <p>HTML - Hypertext Markup Language Language Language Language </p>
+        
+        <h1>CHƯƠNG 2: CSS </h1>
+        
+        <p>CSS- Cascading Style Sheet Language Language Language Language</p>
+       
+        <h1>CHƯƠNG 3: JAVASCRIPT </h1>
+        
+        <p>Javascript Language Language Language Language Language</p>
+        
+        <h1>CHƯƠNG 4: JQUERY </h1>
+        
+        <p>jQuery LanguageVLanguage LanguageLanguageLanguage</p>
+       
+    </div>
+    <script>
+        // Lấy các phần tử từ DOM
+        var btnTimVaThayThe = document.querySelector('input[value="Tìm và thay thế"]');
+        var btnKhoiPhuc = document.querySelector('input[value="Khôi phục"]');
+        var inputChuoiTim = document.querySelector('input[name="txtChuoi"]');
+        var inputChuoiThayThe = document.querySelector('input[name="txtThayThe"]');
+        var checkboxPhanBiet = document.querySelector('input[name="phanBiet"]');
+        var divKhung = document.querySelector('.khung');
+        var divKhungGoc = divKhung.innerHTML;
+  
+        // Thêm sự kiện click cho nút Tìm và thay thế
+      btnTimVaThayThe.addEventListener('click', function() {
+        // Lấy giá trị từ các input
+        var chuoiTim = inputChuoiTim.value;
+        var chuoiThayThe = inputChuoiThayThe.value;
+        var phanBiet = checkboxPhanBiet.checked;
+
+        // Tìm kiếm và thay thế trong nội dung của khung
+        var pattern = new RegExp(chuoiTim, phanBiet ? 'g' : 'gi');
+        var noiDungGoc = divKhung.innerHTML;
+        divKhung.innerHTML = noiDungGoc.replace(pattern, chuoiThayThe);
+      });
+
+      // Thêm sự kiện click cho nút Khôi phục
+      btnKhoiPhuc.addEventListener('click', function() {
+        divKhung.innerHTML = divKhungGoc;
+      });
+    </script>
+</body>
+</html>
