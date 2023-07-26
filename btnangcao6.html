@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang Web với 5 phần</title>
+    <style>
+        /* Thiết lập font chữ và màu sắc chung */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Phần banner trên cùng */
+        .banner {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Phần menu ngang */
+        .menu {
+            background-color: #444;
+            color: #fff;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        /* Phần menu list nằm sát bên trái */
+        .menu-list {
+            float: left;
+            width: 200px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-top: 10px;
+            height: 400px;
+        }
+
+        /* Phần menu quảng cáo nằm bên phải đối xứng với menu list */
+        .menu-ad {
+            float: right;
+            width: 200px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-top: 10px;
+            height: 400px;
+        }
+
+        /* Phần nội dung ở giữa */
+        .content {
+            margin: 0 220px; /* Để cắt lề trái và lề phải cho menu list và menu ad */
+            padding: 20px;
+            margin-top:10px ;
+        }
+        footer    {
+            background-color: #1d04d7;
+            padding: 0.5px;
+            margin-top: 10px;
+            clear: both; /* Xóa float từ các phần tử trước đó */
+        }
+        footer h3{
+             color: yellow;
+             text-align: center;
+         }
+         .menu-ad a {
+  display: block;
+  padding-bottom: 120px;
+  color: #1d04d7;
+  background-color: #b9b1f9;
+  text-decoration: none;
+}
+.menu-ad ul {
+  list-style: none;
+  padding: 0;
+ 
+}
+
+.menu-ad li {
+  margin-bottom: 10px;
+  
+}
+.menu-ad a{
+    border-radius: 40px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>Đây là banner trên cùng</h1>
+    </div>
+
+    <div class="menu">
+        <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Liên hệ</a>
+    </div>
+
+    <div class="menu-list">
+        <h2>Menu list</h2>
+        <ul>
+            <li><a href="#">Mục 1</a></li>
+            <li><a href="#">Mục 2</a></li>
+            <li><a href="#">Mục 3</a></li>
+        </ul>
+    </div>
+
+
+    <div class="menu-ad">
+        <h2>Menu quảng cáo</h2>
+        <ul>
+            <li><a  href="btnangcao5test.html">Quảng cáo 1</a></li>
+            <li><a href="array.html">Quảng cáo 2</a></li>
+          </ul>
+    </div>
+
+    <div class="content">
+        <h2>Nội dung chính</h2>
+        <p>Đây là nội dung chính của trang web</p>
+    </div>
+    <footer>
+        <h3> Họ tên sinh viên</h3>
+    </footer>
+</body>
+</html>
