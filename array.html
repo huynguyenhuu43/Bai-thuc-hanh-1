@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  
+}
+
+.banner {
+  background-image:url(star.jpg);
+  padding: 2px;
+  border-bottom: 1px solid #fff;
+}
+
+.container {
+  display: flex;
+}
+
+.menu {
+  background-color: black;
+  min-width: 100px;
+  min-height: 400px;
+  padding: 20px;
+  margin-top: 5px;
+  border-right: 1px solid #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  }
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+ 
+}
+
+.menu li {
+  margin-bottom: 10px;
+  
+}
+.menu a{
+    border-radius: 70px;
+    text-align: center;
+}
+
+.content {
+  flex: 1;
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 20px;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  
+}
+
+
+.title{
+        text-shadow: 5px 5px rgb(87, 4, 4) ;
+        color: red;
+        text-align: left;
+    }
+.name{
+        color: yellow;
+        text-align: right;
+    }
+    .menu a {
+  display: block;
+  padding: 8px;
+  color: #1d04d7;
+  background-color: #b9b1f9;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #c6f35e; /* Màu nền khi hover */
+  color: #dc0808; /* Màu chữ khi hover */
+  font-weight: bold; /* Font chữ khi hover */
+}
+/* Sử dụng flexbox cho các hình */
+
+
+
+
+
+.end    {
+    background-color: #1d04d7;
+    padding: 2px;
+  border-bottom: 1px solid #fff;
+border-top: 1px solid #fff;
+margin-top: 5px;
+}
+.end h3{
+    color: yellow;
+    text-align: center;
+}
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  background-color: #fcdca0;
+  
+}
+#nhapvao{
+    width: 80%;
+}
+
+
+</style>
+<body>
+  <div class="banner">
+    <!-- Thêm nội dung của banner ở đây -->
+    <h1 class="title">Góc thư giãn</h1>
+        
+    <h3 class="name">Góc thư giãn</h3>
+  </div>
+
+  <div class="container">
+    <div class="menu">
+      <!-- Thêm nội dung của menu ở đây -->
+      <ul>
+        <li><a  href="btnangcao5test.html">Trang chủ</a></li>
+        <li><a href="array.html">Thống kê mảng</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <!-- Thêm nội dung của phần nội dung ở đây -->
+      <h2 style="text-align: center; color: rgb(255, 255, 87); margin-top: 2px;" >Thống kê mảng</h2>
+      <hr>
+      <table>
+        <tr>
+            <td align="bold">Nhập số phần tử mảng:</td>
+            <td id="nhapvao"><input type="number" name="numberPhanTu" id="numberPhanTu" value="10"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Tạo Mảng" onclick="taoMangNgauNhien()"></td>
+            <td id="nhapvao"><input type="text" name="txtChuoi" id="txtChuoi" style="width: 80%;" readonly></td>
+        </tr>
+        <tfoot>
+            <td colspan="2">
+                <input type="button" value="Xóa Các Số Chẵn" onclick="xoaCacSoChan()">
+                <input type="button" value="Quay Trái" onclick="quayTrai()">
+                <input type="button" value="Quay Phải" onclick="quayPhai()">
+            </td>
+        </tfoot>
+    </table>
+    </div>
+  </div>
+<div class="end">
+    <h3> Họ tên sinh viên</h3>
+</div>
+<script>
+     var arr = [];
+
+function taoMangNgauNhien() {
+    var soPhanTu = parseInt(document.getElementById("numberPhanTu").value);
+    arr = [];
+    for (var i = 0; i < soPhanTu; i++) {
+        var randomNumber = Math.floor(Math.random() * 50) + 1;
+        arr.push(randomNumber);
+    }
+    hienThiMang();
+}
+
+function xoaCacSoChan() {
+    arr = arr.filter(function (item) {
+        return item % 2 !== 0;
+    });
+    hienThiMang();
+}
+
+function quayTrai() {
+    var firstElement = arr.shift();
+    arr.push(firstElement);
+    hienThiMang();
+}
+
+function quayPhai() {
+    var lastElement = arr.pop();
+    arr.unshift(lastElement);
+    hienThiMang();
+}
+
+function hienThiMang() {
+    var txtChuoi = document.getElementById("txtChuoi");
+    txtChuoi.value = arr.join(", ");
+}
+</script>
+
+</body>
+</html>
