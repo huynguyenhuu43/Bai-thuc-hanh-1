@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu {
+            background-color: #4cf1d5;
+            border-bottom: 2px solid #fff;
+            text-align: center;
+        }
+        
+        .menu a {
+            background-color: #0d4c42;
+            color: #fff;
+            padding: 3px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+        .menu-item {
+            color: white;
+            display: inline-block; /* Thêm thuộc tính này để nằm bên cạnh các liên kết khác */
+            position: relative; /* Thêm thuộc tính này để xác định vị trí tương đối */
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0d4c42;
+            width: 70px;
+            top: 26px;
+            left: 0;
+        }
+
+        .menu-item:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="#">Trang chủ</a>
+        <a href="#">Trang</a> <!-- Đưa thẻ "Trang" xuống dưới -->
+        <div class="menu-item">
+            <div class="dropdown">
+                <a href="#" class="menu3">Tùy chọn</a>
+                <div class="dropdown-content">
+                    <a href="#">Con cá</a>
+                    <a href="#">Con lươn</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

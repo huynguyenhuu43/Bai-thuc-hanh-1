@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề thi thử 1</title>
+</head>
+<body>
+    <style>
+
+        .container 
+        {
+            display: flex;
+        }
+        .hinhanh 
+        {
+            
+            min-width: 150px;
+            min-height: 400px;
+            padding: 2px;
+            margin-top: 5px;
+            border-right: 1px solid #fff;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .noidung 
+        {
+            flex: 1;
+            margin-top: 5px;
+            margin-left: 5px;
+            padding: 20px;
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            display: flex; /* Sử dụng flexbox */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+            
+            
+  
+        }
+
+        .banner
+        {
+            background-color: rgb(79, 169, 225);
+            border-bottom: 1px solid #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .title
+        {
+            text-shadow: 5px 5px rgb(213, 0, 0) ;
+            color: rgb(250, 254, 53);
+            order: 1;
+        }
+        .name
+        {
+            color: #fff;
+            order: 2;
+        }
+        .menu
+        {
+            background-color: rgb(112, 247, 213);
+            text-align: center;
+            
+        }
+        .menu a
+        {
+            background-color: rgb(19, 171, 97);
+            color: #fff;
+            display: inline-block;
+            padding: 3px;
+            text-decoration: none;
+        }
+        body{
+            background-color: rgb(137, 227, 227);
+        }
+        .color-box {
+        width: 30px;
+        height: 30px;
+        margin: 3px;
+        display: inline-block;
+        cursor: pointer;
+    }
+    
+    .green {
+        background-color: blue;
+    }
+    
+    .red {
+        background-color: red;
+    }
+    
+    .purple {
+        background-color: purple;
+    }
+    
+    .yellow {
+        background-color: yellow;
+    }
+    .hinhanh img {
+        width: 200px; /* Kích thước ảnh sẽ chiếm toàn bộ width của phần tử cha */
+        height: 140px; /* Chiều cao tự động điều chỉnh để duy trì tỷ lệ hình ảnh */
+        display: block; /* Đảm bảo rằng ảnh sẽ xuất hiện trên một dòng riêng biệt */
+        margin: 5px; /* Khoảng cách giữa các ảnh */
+    }
+    </style>
+    <div class="banner">
+        <h1 class="title"> BÀI THI ỨNG DỤNG WEB</h1>
+        <H3 class="name">MSSV: 2051010108 - Họ Tên: Nguyễn Hữu Huy</H3>
+
+    </div>
+    <div class="menu">
+        <a href="">Trang chủ</a>
+        <a href="">Các hãng xe</a>
+        
+    </div>
+    <div class="container">
+        <div class="hinhanh">
+            <!-- Hình ảnh Honda -->
+            <div class="honda">
+                <img src="Images/honda-xanh.jpg" alt="Honda A"   onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+                <img src="Images/honda-do.jpg" alt="Honda B" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+                <img src="Images/honda-tim.jpg" alt="Honda C" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+                <img src="Images/honda-vang.jpg" alt="Honda D"  onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+            </div>
+            <!-- <div class="kia">
+                <img src="Images/kia-xanh.jpg" alt="Kia E">
+                <img src="Images/kia-do.jpg" alt="Kia F">
+                <img src="Images/kia-tim.jpg" alt="Kia G">
+                <img src="Images/kia-vang.jpg" alt="Kia H">
+            </div> -->
+            
+        </div>
+        
+        <div class="noidung">
+            
+            <table  border="1" style="border-collapse: collapse; border-color: black ; width: 70%; height: 70%; ">
+                <form onsubmit="return displayOrderInfo()">
+                <TR style="border-top: rgb(137, 227, 227); border-left: rgb(137, 227, 227); border-right: rgb(137, 227, 227)" >
+                    <td colspan="2" > <h2 align="center" style="color: red;">THÔNG TIN ĐẶT HÀNG</h2></td>
+                </TR>
+                <tr>
+                    <td>Loại xe</td>
+                    <td>
+                        <select name="hangxe" >
+                        <option value="red" > Honda </option >
+                        <option value="green">Kia </option>
+                        </select >
+                    </td>
+                </tr>
+                <tr>
+                    <td>Số lượng</td>
+                    <td><input type="number" name="soluong" id="soluong" min="1" max="100"></td>
+                </tr>
+                <tr>
+                    <td>Màu sắc</td>
+                    <td>
+                        <div class="color-box green" title="sanh" onclick="displayImage('Images/honda-xanh.jpg')"></div>
+                        <div class="color-box red" title="Do"onclick="displayImage('Images/honda-do.jpg')"></div>
+                        <div class="color-box purple" title="Tim"onclick="displayImage('Images/honda-tim.jpg')"></div>
+                        <div class="color-box yellow" title="Vang"onclick="displayImage('Images/honda-vang.jpg')"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <img id="selectedImage" src="" alt="Image" style="display: block; margin: 0 auto; width: 350px; height: 250px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="submit" value="Đặt hàng" style="width: 100px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"id="orderSummary" style="height: 30px;">                           </td>
+                </tr>
+            </form>
+            </table>
+        
+        </div>
+    </div>
+
+</body>
+<script>
+     function displayImage(imageSrc) {
+    const selectedImage = document.getElementById('selectedImage');
+    selectedImage.src = imageSrc;}
+    // Hàm phóng to hình ảnh
+    function zoomIn(image) {
+      image.style.transform = 'scale(1.5)';
+      image.style.transition = 'transform 0.3s ease';
+      
+    }
+  
+    // Hàm trở lại kích thước ban đầu
+    function zoomOut(image) {
+      image.style.transform = 'scale(1)';
+    }
+    let selectedColor = "";
+
+  function displayImage(imageSrc) {
+    const selectedImage = document.getElementById('selectedImage');
+    selectedImage.src = imageSrc;
+  }
+
+  function setSelectedColor(color) {
+    selectedColor = color;
+  }
+
+  function displayOrderInfo() {
+    const hangxeSelect = document.querySelector('[name="hangxe"]');
+    const soluongInput = document.getElementById('soluong');
+    const orderSummary = document.getElementById('orderSummary');
+    
+    const selectedHangXe = hangxeSelect.options[hangxeSelect.selectedIndex].text;
+    const selectedSoluong = soluongInput.value;
+    const colorText = selectedColor === "" ? "màu" : `màu ${selectedColor}`;
+
+    orderSummary.innerText = `Bạn đặt mua ${selectedSoluong} chiếc ${selectedHangXe.toLowerCase()} ${colorText}`;
+    
+    return false; // Prevent form submission
+  }
+  </script>
+</html>

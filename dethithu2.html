@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .banner
+        {
+            background-color: rgb(102, 157, 240);
+            border-bottom: 1px solid #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .title
+        {
+            text-shadow: 5px 5px rgb(213, 0, 0) ;
+            color: rgb(250, 254, 53);
+            order: 1;
+        }
+        .name
+        {
+            color: #fff;
+            order: 2;
+        }
+        .menu
+        {
+            background-color: #4cf1d5;
+            border-bottom: 2px solid #fff;
+            text-align: center;
+            
+        }
+        .menu a
+        {
+            background-color: #0d4c42;
+            color: #fff;
+            padding: 3px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        /* Đảm bảo ảnh nằm trên cùng một hàng */
+        .hinhanh {
+            display: flex;
+            
+            z-index: 1;
+            justify-content: center;
+           /* flex-direction: column sắp hình theo hàng dọc; 
+            align-items: flex-end; sắp bên phải 
+            align-items: flex-end; sắp bên trái */
+        }
+
+/* Điều chỉnh kích thước của ảnh */
+        .hinhanh img {
+            width: 150px; /* Điều chỉnh kích thước tùy ý */
+            height: auto; /* Giữ tỷ lệ khung hình */
+            
+            margin: 5px; /* Khoảng cách giữa các ảnh */
+        }
+        .container 
+        {
+            display: flex;
+        }
+        .color 
+        {
+            
+            min-width: 250px;
+            min-height: 500px;
+            padding: 2px;
+            margin-top: 5px;
+            border-right: 3px solid #fff;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .noidung 
+        {
+            flex: 1;
+            margin-top: 5px;
+            margin-left: 5px;
+            padding: 20px;
+            border-top: 1px solid #fff;
+            border-left: 0px solid #fff;
+            border-bottom: 1px solid #fff;
+            position: relative; /* bài ball */
+            overflow: hidden;
+
+        }
+        body
+        {
+            background-color: #4cf1d5;
+        }
+        .color-box {
+            width: 50px;
+            height: 50px;
+            margin: 3px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    
+    .green {
+        background-color: blue;
+    }
+    
+    .red {
+        background-color: red;
+    }
+    
+    .purple {
+        background-color: purple;
+    }
+    
+    .yellow {
+        background-color: yellow;
+    }
+    .button
+    {
+        display: block;
+        margin-top: 100px;
+        margin-left: 60px;
+    }
+    .ball
+    {
+        width: 60px;
+        height: 60px;
+        background-color: rgb(247, 19, 19);
+        border-radius: 50%; /* Điều này làm cho phần tử trở thành hình tròn */
+        position: absolute;
+        
+    }
+    .menu-item {
+            color: white;
+            display: inline-block; /* Thêm thuộc tính này để nằm bên cạnh các liên kết khác */
+            position: relative; /* Thêm thuộc tính này để xác định vị trí tương đối */
+        }
+
+        .dropdown {
+            position: relative;
+            z-index: 2;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0d4c42;
+            width: 70px;
+            top: 26px;
+            left: 0;
+        }
+
+        .menu-item:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+    <div class="banner">
+        <h1 class="title">BÀI THI ỨNG DỤNG WEB</h1>
+        <H3 class="name">Nguyễn Hữu Huy - 2051010108</H3>
+    </div>
+    <div class="menu">
+        <a href="#">Trang chủ</a>
+        <div class="menu-item">
+            <div class="dropdown">
+                <a href="#" class="menu3">Tùy chọn</a>
+                <div class="dropdown-content">
+                    <a href="#">Con cá</a>
+                    <a href="#">Con lươn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hinhanh">
+        <img src="Images/honda-xanh.jpg" alt="Honda A"   onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+        <img src="Images/honda-do.jpg" alt="Honda B" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+        <img src="Images/honda-tim.jpg" alt="Honda C" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+        <img src="Images/honda-vang.jpg" alt="Honda D"  onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+        <img src="Images/kia- xanh.jpg" alt="Kia E"onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+        <img src="Images/kia-do.jpg" alt="Kia F"onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+        <img src="Images/kia-tim.jpg" alt="Kia G"onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+        <img src="Images/kia-vang.jpg" alt="Kia H"onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+    </div>
+
+    <div class="container">
+        <div class="color">
+            <div class="color-box green" title="sanh" ></div>
+            <div class="color-box red" title="Do"></div>
+            <div class="color-box purple" title="Tim"></div>
+            <div class="color-box yellow" title="Vang"></div>
+            <div class="button">
+                <input type="button" value="Start" placeholder="Start">
+                <input type="button" value="Stop" placeholder="Stop">
+            </div>
+
+        </div>
+
+        <div class="noidung">
+            <div class="ball"></div>
+        </div>
+    </div>
+    <script>
+        function zoomIn(image) {
+      image.style.transform = 'scale(1.5)';
+      image.style.transition = 'transform 0.3s ease';
+      
+    }
+  
+    // Hàm trở lại kích thước ban đầu
+    function zoomOut(image) {
+      image.style.transform = 'scale(1)';
+    }
+
+/// mã xử lý di chuyển quả bóng
+const container = document.querySelector('.noidung'); // Sử dụng class .noidung thay cho ID #container
+const ball = document.querySelector('.ball'); // Sử dụng class .ball thay cho ID #ball
+const hinhanhImages = document.querySelectorAll('.hinhanh img'); // Lấy tất cả các hình ảnh
+
+
+let x = 0;
+let y = 0;
+let dx = 8;
+let dy = 8;
+
+function draw() {
+    x += dx;
+    y += dy;
+
+    if (x <= 0 || x >= container.offsetWidth - ball.offsetWidth) {
+        dx = -dx;
+    }
+    if (y <= 0 || y >= container.offsetHeight - ball.offsetHeight) {
+        dy = -dy;
+    }
+
+    ball.style.left = x + 'px';
+    ball.style.top = y + 'px';
+}
+
+let intervalId;
+
+const startButton = document.querySelector('input[value="Start"]');
+startButton.addEventListener('click', () => {
+    if (!intervalId) {
+        intervalId = setInterval(draw, 80);
+    }
+});
+
+const stopButton = document.querySelector('input[value="Stop"]');
+stopButton.addEventListener('click', () => {
+    clearInterval(intervalId);
+    intervalId = null;
+});
+
+
+
+// ... Mã xử lý đổi màu khi click vào ô color
+
+const colorBoxes = document.querySelectorAll('.color-box'); // Lấy tất cả các ô màu
+
+colorBoxes.forEach(colorBox => {
+    colorBox.addEventListener('click', () => {
+        const backgroundColor = getComputedStyle(colorBox).backgroundColor; // Lấy màu nền của ô màu
+        ball.style.backgroundColor = backgroundColor; // Đặt màu nền cho quả bóng
+    });
+});
+/// mã xử lý background
+hinhanhImages.forEach(image => {
+    image.addEventListener('click', () => {
+        const backgroundImage = `url(${image.src})`; // Lấy đường dẫn hình ảnh và tạo chuỗi background
+        ball.style.backgroundImage = backgroundImage; // Đặt hình ảnh làm background cho quả bóng
+    });
+});
+
+
+
+
+    </script>
+</body>
+</html>
